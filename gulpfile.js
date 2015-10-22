@@ -2,7 +2,9 @@ var os = require('os');
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var minifyhtml = require('gulp-minify-html');
+var jade = require('gulp-jade');
 var less = require('gulp-less');
+var stylus = require('gulp-stylus');
 var minifycss = require('gulp-minify-css');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
@@ -22,7 +24,7 @@ var appScripts = [
 ];
 
 var appStyles = [
-  'assets/styles/*.less'
+  'assets/styles/**'
 ];
 var appImages = [
   'assets/images/**'
@@ -103,20 +105,31 @@ gulp.task('views', function() {
     quotes: true
   };
 
-  gulp.src('index.html')
-    .pipe(minifyhtml(opts))
+  gulp.src('index.jade')
+    .pipe(jade())
     .pipe(gulp.dest(buildDir));
-  gulp.src('assets/views/**/*.html')
-    .pipe(minifyhtml(opts))
+
+  gulp.src('assets/views/**/*.jade')
+    .pipe(jade())
     .pipe(gulp.dest(buildDir + '/assets/views'))
 });
 
 // Styles
 gulp.task('styles', function() {
+
+  /*
   gulp.src('assets/styles/app.less')
     .pipe(less())
     .pipe(minifycss())
     .pipe(gulp.dest(buildDir + '/assets/styles/'))
+  */
+
+  gulp.src('assets/styles/app.styl')
+    .pipe(stylus({
+      compress: true
+    }))
+    .pipe(gulp.dest(buildDir + '/assets/styles/'));
+
 });
 
 // Images
