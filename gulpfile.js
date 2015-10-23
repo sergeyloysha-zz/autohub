@@ -6,6 +6,7 @@ var jade = require('gulp-jade');
 var less = require('gulp-less');
 var stylus = require('gulp-stylus');
 var minifycss = require('gulp-minify-css');
+var autoprefixer = require('autoprefixer-stylus');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var watch = require('gulp-watch');
@@ -44,7 +45,7 @@ var vendorScripts = [
 ];
 
 var vendorStyles = [
-  'app/vendors/bootstrap/dist/css/bootstrap.min.css'
+  'app/vendors/normalize-css/normalize.css'
 ];
 
 var vendorFonts = [
@@ -124,8 +125,9 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(buildDir + '/assets/styles/'))
   */
 
-  gulp.src('assets/styles/app.styl')
+  return gulp.src('assets/styles/app.styl')
     .pipe(stylus({
+      use: [autoprefixer('iOS >= 7', 'last 1 Chrome version')],
       compress: true
     }))
     .pipe(gulp.dest(buildDir + '/assets/styles/'));
@@ -171,7 +173,7 @@ gulp.task('watch', ['default', 'server'], function() {
   gulp.watch(appImages, ['images']);
 
   // Watch HTML files
-  gulp.watch(['index.html', 'assets/views/**/*.html'], ['views']);
+  gulp.watch(['index.jade', 'assets/views/**/*.jade'], ['views']);
 
   // Watch any files in build/, reload on change
   watch(buildDir + '/**').pipe(connect.reload());

@@ -1,0 +1,44 @@
+.header
+  .header__side.header__side_left
+    img.logo(src='assets/images/logo.svg')
+
+  .header__side.header__side_right
+    span.header__text 5658 предложений от проверенных продавцов в Минске
+    a.btn.btn_white.header__btn(href='#/auto/new') Разместить предложение
+
+.section
+  .section__side.section__side_left
+  .section__side.section__side_right
+    .content
+      .content-item(ng-repeat="item in items")
+        .content-item__inner
+          a.link.content-item__preview(href='#/auto/{{ item.id }}')
+            img.content-item__image(src='{{ item.image }}')
+            span.content-item__price {{ item.price }} $
+          .content-item__info
+            a.link.content-item__string(href='#/auto/{{ item.id }}') {{ item.auto }}
+            .content-item__string
+              span.content-item__param {{ item.year }}
+              span.content-item__param {{ item.milage }} км
+              span.content-item__param {{ item.engine }}
+    ul.pagination.pagination_after
+      li.pagination__item
+        a.link.pagination__link.pagination__link_active(href='#/page/1') 1
+      li.pagination__item
+        a.link.pagination__link(href='#/page/2') 2
+      li.pagination__item
+        a.link.pagination__link(href='#/page/3') 3
+      li.pagination__item
+        a.link.pagination__link(href='#/page/4') 4
+      li.pagination__item
+        a.link.pagination__link(href='#/page/5') 5
+
+.footer
+  .footer__side.footer__side_left &copy; Автохаб 2015
+
+  .footer__side.footer__side_right
+    .footer__links
+      a.link.footer__links-item(href='#/privacy') Правовое соглашение
+      a.link.footer__links-item(href='#/support') Техническая поддержка
+    .footer__copyright Сделано в 
+      a.link(href='//skrotskystudio.by') Студии Вадима Скротского

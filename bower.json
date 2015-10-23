@@ -23,6 +23,7 @@
     "angular-animate": "~1.4.7",
     "moment": "~2.10.6",
     "angular-route": "~1.4.7",
-    "ngstorage": "~0.3.9"
+    "ngstorage": "~0.3.9",
+    "normalize-css": "normalize.css#~3.0.3"
   }
 }

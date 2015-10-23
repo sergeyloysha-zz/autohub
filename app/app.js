@@ -17,7 +17,8 @@ angular.module('ah', [
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
-      template: '<div>Autohub init</div>'
+      controller: 'InitCtrl',
+      templateUrl: 'assets/views/autohub.html'
     })
     .otherwise({
       redirectTo: '/404'
