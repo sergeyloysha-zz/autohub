@@ -20,6 +20,9 @@ angular.module('ah', [
       controller: 'InitCtrl',
       templateUrl: 'assets/views/autohub.html'
     })
+    .when('/404', {
+      template: '<div>Not Found</div>'
+    })
     .otherwise({
       redirectTo: '/404'
     })
