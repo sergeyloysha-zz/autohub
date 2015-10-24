@@ -1,13 +1,5 @@
 @import "fonts.styl"
-
-clearfix()
-  zoom 1
-  &:after
-  &:before
-    content ""
-    display table
-  &:after
-    clear both
+@import "mixins.styl"
 
 *
   box-sizing border-box
@@ -25,6 +17,9 @@ html
 body
   font 14px 'Roboto', 'Helvetica Neue', Helvetica, Arial
   color #999
+
+.hide-l
+  display none
   
 .page
   display flex
@@ -32,24 +27,32 @@ body
   min-height 100vh
   max-width 1200px
   margin 0 auto
+  
+.side
+  display flex
+  
+  &_left
+    flex-basis 220px
+    
+  &_right
+    padding 0 20px
+    flex 1
+    
+  &_center
+    align-items center
+    
+  &_section
+    
+  &_column
+    flex-direction column
       
 .header
   display flex
   height 40px
   margin 20px 0 40px 0
-  
-  &__side
-    display flex
-    align-items center
-  
-    &_left
-      flex-basis 220px
-      
-    &_right
-      padding 0 20px
-      flex 1
     
-  .logo
+  &__logo
+    display flex
     padding-left 20px
     
   &__text
@@ -61,27 +64,18 @@ body
 .section
   display flex
   flex 1
-  
-  &__side
-    align-items stretch
-  
-    &_left
-      flex-basis 220px
-      
-    &_right
-      flex 1
-      padding 0 20px
     
 .content
   display flex
-  flex-flow row wrap
+  flex-wrap wrap
   margin 0 -10px
-  flex 1
     
   &-item
     position relative
     width 33.333%
+    min-width 260px
     padding 0 10px 20px 10px
+    transition all .3s
     
     &__inner
       position relative
@@ -97,10 +91,14 @@ body
     &__preview
       display block
       position relative
+      background #ececec
+      min-height 160px
       
     &__image
+      display block
       border-radius 3px 3px 0 0
       width 100%
+      height auto
       
     &__price
       position absolute
@@ -117,6 +115,11 @@ body
     &__info
       border-radius 0px 0px 3px 3px
       padding 10px
+      
+    &__string
+      overflow hidden
+      text-overflow ellipsis
+      white-space nowrap
       
     &__param
       margin-right 10px
@@ -160,23 +163,31 @@ body
       color #9d9d9d !important
       border-color #dcdcdc
       cursor default
-      
+
 .footer
   display flex
-  margin 20px 0
-  
-  &__side
-    display flex
-  
-    &_left
-      flex-basis 220px
-      
-    &_right
-      flex 1
-      padding 0 20px
+  margin 40px 0 20px 0
     
   &__links
     &-item
       margin-right 20px
   &__copyright
     margin-left auto
+    
+@media (max-width 1020px)
+
+  .hide-m
+    display none
+
+  .content
+    &-item
+      width 50%
+      
+@media (max-width 760px)
+
+  .hide-s
+    display none
+
+  .content
+    &-item
+      width 100%
