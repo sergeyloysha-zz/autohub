@@ -1,11 +1,11 @@
 .header
-  .side.side_left.side_center
+  .side.side_left.side_pl.side_center.hide-xs
     a.header__logo(href='#/')
       img.image(src='assets/images/logo.svg')
 
   .side.side_right.side_center
-    span.header__text {{ items.length }} предложений 
-      span.hide-s от проверенных продавцов 
+    span.header__text.hide-s {{ items.length }} предложений 
+      span.hide-m от проверенных продавцов 
       span в Минске
     a.btn.btn_white.header__btn(href='#/auto/new') Разместить предложение
 
@@ -31,11 +31,11 @@
 
 
 .footer
-  .side.side_left &copy; Автохаб 2015
+  .side.side_left.side_pl &copy; Автохаб 2015
 
   .side.side_right
-    .footer__links
+    .footer__links.hide-s
       a.link.footer__links-item(href='#/privacy') Правовое соглашение
       a.link.footer__links-item(href='#/support') Техническая поддержка
-    .footer__copyright Сделано в 
+    .footer__copyright.hide-m Сделано в 
       a.link(href='//skrotskystudio.by', target='_blank') Студии Вадима Скротского
