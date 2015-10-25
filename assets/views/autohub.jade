@@ -13,7 +13,7 @@
   .side.side_left.hide-s
   .side.side_right.side_column
     .content
-      .content-item(ng-repeat="item in items")
+      .content-item(ng-repeat='item in items')
         .content-item__inner
           a.link.content-item__preview(href='#/auto/{{ item.id }}')
             img.content-item__image(src='{{ item.image }}')
@@ -26,16 +26,9 @@
               span.content-item__param {{ item.milage }} км
               span.content-item__param {{ item.engine }}
     ul.pagination.pagination_after
-      li.pagination__item
-        a.link.pagination__link.pagination__link_active(href='#/page/1') 1
-      li.pagination__item
-        a.link.pagination__link(href='#/page/2') 2
-      li.pagination__item
-        a.link.pagination__link(href='#/page/3') 3
-      li.pagination__item
-        a.link.pagination__link(href='#/page/4') 4
-      li.pagination__item
-        a.link.pagination__link(href='#/page/5') 5
+      li.pagination__item(ng-repeat='page in pages')
+        a.link.pagination__link(ng-model='model.page' ng-class='{pagination__link_active: page.id == $parent.model.page}', ng-click='$parent.model.page = page.id') {{ page.id }}
+
 
 .footer
   .side.side_left &copy; Автохаб 2015

@@ -1,6 +1,11 @@
 angular.module('ah.controllers', [])
 
   .controller('InitCtrl', ['$scope', function($scope) {
+
+    $scope.model = {
+      page: 1
+    }
+
     $scope.items = [
       {"id": 1, "auto": "Mercedes CLS350", "image": "assets/images/thumbs/img_1.png", "year": 2013, "milage": "47 000", "engine": "Бензин 3.5 A", "price": "39 500"},
       {"id": 2, "auto": "Alfa Romeo MiTo", "image": "assets/images/thumbs/img_2.png", "year": 2010, "milage": "139 087", "engine": "Бензин 1.4 M", "price": "9 450"},
@@ -11,5 +16,13 @@ angular.module('ah.controllers', [])
       {"id": 7, "auto": "Mercedes GL500 4MATIC", "image": "assets/images/thumbs/img_7.png", "year": 2007, "milage": "125 000", "engine": "Бензин 5.5 А", "price": "21 900"},
       {"id": 8, "auto": "Porsche Macan S", "image": "assets/images/thumbs/img_8.png", "year": 2014, "milage": "9 700", "engine": "Бензин 3.0 А", "price": "65 500"},
       {"id": 9, "auto": "Fiat 500", "image": "assets/images/thumbs/img_9.png", "year": 2008, "milage": "86 280", "engine": "Бензин 1.2 М", "price": "6 000"}
+    ]
+
+    $scope.pages = [
+      {"id": 1},
+      {"id": 2},
+      {"id": 3},
+      {"id": 4},
+      {"id": 5}
     ]
   }])
