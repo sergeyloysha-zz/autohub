@@ -7,11 +7,10 @@
 
 angular.module('ah', [
   'ngRoute',
-  'ngStorage',
   'ah.filters',
   'ah.services',
   'ah.directives',
-  'ah.controllers',
+  'ah.controllers'
 ])
 
 .config(['$routeProvider', function($routeProvider) {
