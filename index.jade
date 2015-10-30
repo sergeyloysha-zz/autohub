@@ -12,8 +12,10 @@ html(lang='en', ng-app='ah')
     link(rel='stylesheet', href='assets/styles/vendor.css')
     link(rel='stylesheet', href='assets/styles/app.css')
 
-  body
-    div(class='page', ng-view)
+  body(class='page')
+    header
+    div(class='section', ng-view)
+    footer
 
     script(src='scripts/vendor.js')
     script(src='scripts/app.js')

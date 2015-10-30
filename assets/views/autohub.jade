@@ -1,41 +1,25 @@
-.header
-  .side.side_left.side_pl.side_center.hide-xs
-    a.header__logo(href='#/')
-      img.image(src='assets/images/logo.svg')
-
-  .side.side_right.side_center
-    span.header__text.hide-s {{ items.length }} предложений 
-      span.hide-m от проверенных продавцов 
-      span в Минске
-    a.btn.btn_white.header__btn(href='#/auto/new') Разместить предложение
-
-.section
-  .side.side_left.hide-s
-  .side.side_right.side_column
-    .content
-      .content-item(ng-repeat='item in items')
-        .content-item__inner
-          a.link.content-item__preview(href='#/auto/{{ item.id }}')
-            img.content-item__image(src='{{ item.image }}')
-            span.content-item__price {{ item.price }} $
-          .content-item__info
-            .content-item__string
-              a.link.content-item__param(href='#/auto/{{ item.id }}') {{ item.auto }}
-            .content-item__string
-              span.content-item__param {{ item.year }}
-              span.content-item__param {{ item.milage }} км
-              span.content-item__param {{ item.engine }}
-    ul.pagination.pagination_after
-      li.pagination__item(ng-repeat='page in pages')
-        a.link.pagination__link(ng-model='model.page' ng-class='{pagination__link_active: page.id == $parent.model.page}', ng-click='$parent.model.page = page.id') {{ page.id }}
-
-
-.footer
-  .side.side_left.side_pl &copy; Автохаб 2015
-
-  .side.side_right
-    .footer__links.hide-s
-      a.link.footer__links-item(href='#/privacy') Правовое соглашение
-      a.link.footer__links-item(href='#/support') Техническая поддержка
-    .footer__copyright.hide-m Сделано в 
-      a.link(href='//skrotskystudio.by', target='_blank') Студии Вадима Скротского
+.side.side_left.hide-s
+  .filter
+    .filter__item.link(ng-repeat='filter in [0,1,2,3,4,5]')
+      span Параметр
+      a.link(href='#/')
+        i.icon.icon_delete
+.side.side_right.side_column
+  .content
+    .content-item(ng-repeat='item in items')
+      .content-item__inner
+        a.link.content-item__preview(href='#/auto/{{ item.id }}')
+          img.content-item__image(src='{{ item.thumb }}')
+          span.content-item__price {{ item.price }} $
+        .content-item__info
+          .content-item__string
+            a.link.content-item__param(href='#/auto/{{ item.id }}') {{ item.name }} {{ item.model }}
+          .content-item__string
+            span.content-item__param {{ item.year }}
+            span.content-item__param {{ item.milage }} км
+            span.content-item__param {{ item.engine }}
+            span.content-item__param {{ item.volume }}
+            span.content-item__param {{ item.transmission }}
+  ul.pagination.pagination_after
+    li.pagination__item(ng-repeat='page in pages')
+      a.link.pagination__link(ng-model='model.page' ng-class='{pagination__link_active: page.id == $parent.model.page}', ng-click='$parent.model.page = page.id') {{ page.id }}

@@ -1,15 +1,20 @@
 @import "fonts.styl"
 @import "mixins.styl"
+@import "icons.styl"
 
 *
   box-sizing border-box
+
+a
+.link
+  &:link
+  &:visited
+    color #666
   
-a:link
-a:visited
-  color #666
-  
-a:hover
-  color #333
+a
+.link
+  &:hover
+    color #333
 
 html
   background-color #f5f6f7
@@ -17,6 +22,11 @@ html
 body
   font 14px 'Roboto', 'Helvetica Neue', Helvetica, Arial
   color #999
+  
+.show-m
+.show-s
+.show-xs
+  display none
 
 .hide-l
   display none
@@ -56,12 +66,18 @@ body
     
   &__logo
     display flex
+    width 155px
+    height 27px
+    background url('../images/logo.svg') center no-repeat
     
   &__text
     color #999
       
-  &__btn
+  &__right
     margin-left auto
+    
+  &__item
+    margin-left 40px
     
 .section
   display flex
@@ -131,6 +147,7 @@ body
   transition all .2s ease-in
       
 .btn
+  display inline-block
   padding 0 20px
   line-height 40px
   background transparent
@@ -178,6 +195,23 @@ body
   &__copyright
     margin-left auto
     
+.filter
+  display flex
+  flex-direction column
+  width 100%
+  
+  &__item
+    display flex
+    align-items center
+    width 100%
+    height 50px
+    padding 0 20px
+    border-top 1px solid #dcdcdd
+    cursor pointer
+    
+    &:last-child
+      border-bottom 1px solid #dcdcdc
+
 @media (max-width 1020px)
 
   .hide-m
@@ -189,10 +223,16 @@ body
       
 @media (max-width 760px)
 
+  .show-s
+    display inline-block
+
   .hide-s
     display none
     
 @media (max-width 540px)
+
+  .show-xs
+    display inline-block
 
   .hide-xs
     display none
@@ -200,3 +240,34 @@ body
   .content
     &-item
       width 100%
+      padding 0px 10px 10px 10px
+      
+      &__inner
+        &:hover
+          top 0px
+      
+  .header
+    height 20px
+    margin 20px 0
+    padding 0 10px
+    
+    &__logo
+      width 93px
+      height 17px
+      background url('../images/logo_mob.svg') center no-repeat
+      
+  .side
+    
+    &_pl
+      padding-left 10px
+    
+    &_right
+      padding 0 10px
+      
+  .pagination
+    
+    &_after
+      margin-top 10px
+      
+  .footer
+    margin 20px 0

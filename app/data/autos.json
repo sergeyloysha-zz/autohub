@@ -1,0 +1,101 @@
+[
+  {
+    "name":"Mercedes",
+    "model":"CLS350",
+    "year": 2013,
+    "milage": "47 000",
+    "engine": "Бензин",
+    "volume":"3.5",
+    "transmission":"A",
+    "price":"39 500",
+    "thumb":"assets/images/thumbs/img_1.png"
+  },
+  {
+    "name":"Alfa Romeo",
+    "model":"MiTo",
+    "year": 2010,
+    "milage": "139 087",
+    "engine": "Бензин",
+    "volume":"1.4",
+    "transmission":"M",
+    "price":"9 450",
+    "thumb":"assets/images/thumbs/img_2.png"
+  },
+  {
+    "name":"Volkswagen",
+    "model":"Passat CC",
+    "year": 2011,
+    "milage": "53 000",
+    "engine": "Бензин",
+    "volume":"2.0",
+    "transmission":"A",
+    "price":"16 000",
+    "thumb":"assets/images/thumbs/img_3.png"
+  },
+  {
+    "name":"Volvo",
+    "model":"XC60",
+    "year": 2010,
+    "milage": "88 000",
+    "engine": "Бензин",
+    "volume":"2.0",
+    "transmission":"A",
+    "price":"18 100",
+    "thumb":"assets/images/thumbs/img_4.png"
+  },
+  {
+    "name":"Ford",
+    "model":"Fusion SE15",
+    "year": 2013,
+    "milage": "13 000",
+    "engine": "Бензин",
+    "volume":"1.6",
+    "transmission":"A",
+    "price":"16 300",
+    "thumb":"assets/images/thumbs/img_5.png"
+  },
+  {
+    "name":"Audi",
+    "model":"A8",
+    "year": 2011,
+    "milage": "89 000",
+    "engine": "Дизель",
+    "volume":"4.0",
+    "transmission":"A",
+    "price":"32 900",
+    "thumb":"assets/images/thumbs/img_6.png"
+  },
+  {
+    "name":"Mercedes",
+    "model":"GL500 4MATIC",
+    "year": 2007,
+    "milage": "125 000",
+    "engine": "Бензин",
+    "volume":"5.5",
+    "transmission":"A",
+    "price":"21 900",
+    "thumb":"assets/images/thumbs/img_7.png"
+  },
+  {
+    "name":"Porsche",
+    "model":"Macan S",
+    "year": 2014,
+    "milage": "9 700",
+    "engine": "Бензин",
+    "volume":"3.0",
+    "transmission":"A",
+    "price":"65 500",
+    "thumb":"assets/images/thumbs/img_8.png"
+  },
+  {
+    "name":"Fiat",
+    "model":"500",
+    "year": 2008,
+    "milage": "86 280",
+    "engine": "Бензин",
+    "volume":"1.2",
+    "transmission":"M",
+    "price":"6 000",
+    "thumb":"assets/images/thumbs/img_9.png"
+  }
+]

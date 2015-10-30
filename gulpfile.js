@@ -36,8 +36,9 @@ var appFonts = [
 
 // Vendor Files
 var vendorScripts = [
-  'app/vendors/angular/angular.js',
-  'app/vendors/angular-route/angular-route.js'
+  'app/vendors/angular/angular.min.js',
+  'app/vendors/angular-route/angular-route.min.js',
+  'app/vendors/angular-resource/angular-resource.min.js'
 ];
 
 var vendorStyles = [
@@ -88,6 +89,13 @@ gulp.task('vendors', ['bower'], function() {
   gulp.src(vendorFonts)
     .pipe(gulp.dest(buildDir + '/assets/fonts'))
 });
+
+// Data
+
+gulp.task('data', function() {
+  gulp.src('app/data/**')
+    .pipe(gulp.dest(buildDir + '/data'))
+})
 
 // Scripts
 gulp.task('scripts', function () {
@@ -165,6 +173,7 @@ gulp.task('watch', ['default', 'server'], function() {
 
   // Watch app style, JS and image files
   gulp.watch(appScripts, ['scripts']);
+  gulp.watch('app/data/**', ['data']);
   gulp.watch(appStyles, ['styles']);
   gulp.watch(appImages, ['images']);
 

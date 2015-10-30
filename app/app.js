@@ -7,6 +7,7 @@
 
 angular.module('ah', [
   'ngRoute',
+  'ngResource',
   'ah.filters',
   'ah.services',
   'ah.directives',
