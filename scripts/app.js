@@ -55,7 +55,7 @@ angular.module('ah.directives', [])
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: "/assets/views/header.html",
+        templateUrl: "assets/views/header.html",
         controller: function($scope, Auto) {
           $scope.items = Auto.query();
         }
@@ -66,7 +66,7 @@ angular.module('ah.directives', [])
     return {
         restrict: 'E',
         replace: true,
-        templateUrl: "/assets/views/footer.html",
+        templateUrl: "assets/views/footer.html",
     }
   })
 angular.module('ah.services', [])
